@@ -1,0 +1,13 @@
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\bin\Debug\MPU_GUI.exe.config
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\bin\Debug\MPU_GUI.exe
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\bin\Debug\MPU_GUI.pdb
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\bin\Debug\InTheHand.Net.Personal.dll
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\bin\Debug\InTheHand.Net.Personal.xml
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\obj\Debug\MPU_GUI.csprojAssemblyReference.cache
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\obj\Debug\MPU_GUI.Form1.resources
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\obj\Debug\MPU_GUI.Properties.Resources.resources
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\obj\Debug\MPU_GUI.csproj.GenerateResource.cache
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\obj\Debug\MPU_GUI.csproj.CoreCompileInputs.cache
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\obj\Debug\MPU_GUI.csproj.CopyComplete
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\obj\Debug\MPU_GUI.exe
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\MPU_GUI\MPU_GUI\obj\Debug\MPU_GUI.pdb

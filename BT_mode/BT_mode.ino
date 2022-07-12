@@ -10,8 +10,8 @@ void setup(){
   delay(10);
   command("AT", 2000);
   command("AT+VERSION", 2000);
-  command("AT+NAMEhc06ww", 2000);
-  command("AT+PIN1234", 2000);
+//  command("AT+NAMEhc06ww", 2000);
+//  command("AT+PIN1234", 2000);
 }
 void loop(){
   //Write data from HC06 to Serial Monitor

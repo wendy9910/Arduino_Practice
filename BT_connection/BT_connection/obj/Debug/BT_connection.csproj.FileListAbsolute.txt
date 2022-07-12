@@ -1,0 +1,13 @@
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\bin\Debug\BT_connection.exe.config
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\bin\Debug\BT_connection.exe
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\bin\Debug\BT_connection.pdb
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\bin\Debug\InTheHand.Net.Personal.dll
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\bin\Debug\InTheHand.Net.Personal.xml
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\obj\Debug\BT_connection.csprojAssemblyReference.cache
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\obj\Debug\BT_connection.Form1.resources
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\obj\Debug\BT_connection.Properties.Resources.resources
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\obj\Debug\BT_connection.csproj.GenerateResource.cache
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\obj\Debug\BT_connection.csproj.CoreCompileInputs.cache
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\obj\Debug\BT_connection.csproj.CopyComplete
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\obj\Debug\BT_connection.exe
+C:\Users\88691\Desktop\研究所\碩0\Arduino實作\BT_connection\BT_connection\obj\Debug\BT_connection.pdb
