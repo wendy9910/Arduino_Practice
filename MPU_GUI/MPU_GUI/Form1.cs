@@ -14,6 +14,7 @@ using InTheHand.Net.Sockets;
 using InTheHand.Net.Bluetooth;
 using System.Threading;
 using System.Diagnostics;
+using System.Collections;
 
 
 namespace MPU_GUI
@@ -62,6 +63,8 @@ namespace MPU_GUI
             startbtn.Enabled = false;
             stopbtn.Enabled = false;
             clearbtn.Enabled = false;
+
+            raw.Clear();
         }
 
         private void getAllPorts() 
@@ -76,9 +79,13 @@ namespace MPU_GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            buttonSet();
+            
             raw = new List<byte>();
             sb = new StringBuilder();
+            btstate = false;
+            CPstate = false;
+
+            buttonSet();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -108,17 +115,18 @@ namespace MPU_GUI
             MACs = new BluetoothAddress[devices.Length];
 
             i = 0;
+            comboBox2.Items.Clear();
             foreach (BluetoothDeviceInfo device in devices) 
             {
                 comboBox2.Items.Add(string.Format("{0}: {1}", device.DeviceName, device.DeviceAddress));
                 MACs[i++] = device.DeviceAddress;
             }
-            comboBox2.SelectedIndex = comboBox1.Items.Count-1;
+            comboBox2.SelectedIndex = 0;
             Cursor = Cursors.Arrow;
             if (devices.Length > 0)
                 RBTbtn.Enabled = true;
 
-            btstate = true;
+            
         }
 
         private void RBTbtn_Click(object sender, EventArgs e)
@@ -129,9 +137,11 @@ namespace MPU_GUI
             CPstate = false;
             iStart = 0;
             iEnd = -1;
-            index = comboBox1.FindString(comboBox2.Text);
+            index = comboBox2.FindString(comboBox2.Text);
             comboBox2.SelectedIndex = index;
             ConnectBTDevice();
+
+            btstate = true;
             timer1.Start();
         }
 
@@ -141,6 +151,7 @@ namespace MPU_GUI
             {
                 serviceClass = BluetoothService.SerialPort;
                 addr = MACs[comboBox2.SelectedIndex];
+
                 if (ep != null)
                     ep = null;
                 ep = new BluetoothEndPoint(addr, serviceClass);
@@ -174,7 +185,7 @@ namespace MPU_GUI
         }
 
         int LenRead,i0,iStart,iEnd;
-                byte val;
+        byte val;
         private void ReceivingPacket()
         {
             while (btstate) 
@@ -199,12 +210,15 @@ namespace MPU_GUI
 
         private void displayRx() 
         {
+            //iStart = iEnd;
+            iStart = 0;
             iEnd = raw.Count - 1;
             Text = string.Format("iStart({0})->iEnd({1})", iStart, iEnd);
             while (iStart <= iEnd) 
             {
                 value = raw[iStart++];
-                sb.AppendFormat("{0}", (char) value);            
+                sb.AppendFormat("{0}", (char)value);
+                
             }
             textBox1.Text = sb.ToString();
             Application.DoEvents();

@@ -9,7 +9,7 @@ float y;
 int j;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(57600);
   Serial.println("ENTER AT Commands:");
   //Initialize Bluetooth Serial Port
   hc06.begin(57600);
