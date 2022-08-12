@@ -12,11 +12,14 @@ using InTheHand.Net.Sockets;
 using InTheHand.Net.Bluetooth;
 using System.IO;
 using System.Diagnostics;
+using System.Net.Sockets;
+
 
 namespace BT_connection
 {
     public partial class Form1 : Form
     {
+        static bool isConnected;
         public Form1()
         {
             InitializeComponent();
@@ -30,10 +33,11 @@ namespace BT_connection
         string data;
         private void Form1_Load(object sender, EventArgs e)
         {
+            textBox2.Text = "";
 
         }
 
-        
+
         private void scan_bt_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
@@ -43,6 +47,7 @@ namespace BT_connection
             MACs = new BluetoothAddress[devices.Length];
 
             textBox1.Text = "";
+            textBox2.Text = "";
 
             comboBox1.Items.Clear();
             int i = 0;
@@ -65,13 +70,58 @@ namespace BT_connection
             comboBox1.SelectedIndex = index;
             serviceClass = BluetoothService.SerialPort; //BluetoothService.Handsfree;  
             addr = MACs[comboBox1.SelectedIndex];
-            Debug.Print("Yes");
+            
 
             client.Connect(addr, serviceClass);
-            Receiving_date();
+            Console.WriteLine("Connected!");
+            ReceiveData2();
         }
 
-        private void Receiving_date() 
+        private void ReceiveData2()
+        {
+
+            isConnected = client.Connected;
+            
+            while (isConnected)
+            {
+                try
+                {
+
+                    Stream netStream = client.GetStream();
+
+                    // Send some data to the peer.
+                    byte[] sendBuffer = Encoding.UTF8.GetBytes("Is anybody there?");
+
+                    
+                    if (!netStream.CanRead) 
+                    {
+
+                        Debug.Print("Can't read");
+                    }
+                    else 
+                    {
+        
+                        byte[] receiveBuffer = new byte[1024];
+                        int bytesReceived = netStream.Read(receiveBuffer, 0, 1024);
+                        string data = Encoding.UTF8.GetString(receiveBuffer).ToString().Replace("\0", "");
+
+                        textBox2.AppendText(data);
+                        //textBox2.SelectionStart = textBox2.Text.Length;
+                        //textBox2.ScrollToCaret();
+
+                        Debug.Print(data);
+
+                    }
+                   
+                }
+                catch (Exception e)
+                {
+                    Console.Write("Error:" + e);
+                    break;
+                }
+            }
+        }
+        private void Receiving_date()
         {
             bluetoothListener = new BluetoothListener(serviceClass);
             bluetoothListener.Start();
@@ -84,7 +134,9 @@ namespace BT_connection
                 Stream peerStream = client.GetStream();
                 peerStream.Read(buffer, 0, buffer.Length);
                 data = Encoding.UTF8.GetString(buffer).ToString().Replace("\0", "");//去掉後面的\0位元組
+                
             }
+            Console.Write(data);
             textBox2.Text = data;
             Debug.Print(data);
         }

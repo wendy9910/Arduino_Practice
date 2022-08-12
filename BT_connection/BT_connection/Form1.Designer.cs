@@ -82,11 +82,12 @@
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("新細明體", 12F);
             this.textBox2.Location = new System.Drawing.Point(509, 88);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(534, 403);
-            this.textBox2.TabIndex = 4;
+            this.textBox2.TabIndex = 1;
             // 
             // stop
             // 

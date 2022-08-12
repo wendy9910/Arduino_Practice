@@ -6,12 +6,12 @@ void setup(){
   Serial.begin(9600);
   Serial.println("ENTER AT Commands:");
   //Initialize Bluetooth Serial Port
-  hc06.begin(57600);
+  hc06.begin(38400);
   delay(10);
   command("AT", 2000);
   command("AT+VERSION", 2000);
-//  command("AT+NAMEhc06ww", 2000);
-//  command("AT+PIN1234", 2000);
+  command("AT+NAME=hc05ww", 2000);
+  command("AT+PIN=1234", 2000);
 }
 void loop(){
   //Write data from HC06 to Serial Monitor
